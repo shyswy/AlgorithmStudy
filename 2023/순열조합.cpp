@@ -57,6 +57,19 @@ int main()  //nCr 구하기 -> 중복값 제거되는 것을 활용
 //->  arr[i]==1 로 각 조합을 구할 수 있다.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 //주어진 숫자로 만들 수 있는 모든 숫자. 
 sort(v.begin(), v.end());
 int val = 0, ten = 1;
@@ -74,3 +87,18 @@ do {
     }
 
 } while (next_permutation(v.begin(), v.end()));
+
+
+
+//better  "243252" 같은 숫자 String str이 입력으로 들어온다.
+
+set<string> nums;
+int n = str.size();
+string sub;
+do {
+    for (int i = 1; i <= n; i++)
+    {
+        sub = str.substr(0, i);   // 정해진 n개의 숫자를 1,2,3,....n개 추출
+        nums.insert(sub);
+    }
+} while (next_permutation(str.begin(), str.end())); // n개의 숫자로 가능한 모든 순열 탐색
